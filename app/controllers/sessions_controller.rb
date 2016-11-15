@@ -6,17 +6,17 @@ class SessionsController < ApplicationController
  def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      #if user.activated?
+      #if user.activated == "true"
         log_in user
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
 
-        if user.admin?
+        if user.role == "admin"
           redirect_to(admin_page_url)
-        elsif user.doctor?
+        elsif user.role == "doctor"
           redirect_to(doctor_page_url)
-        elsif user.office?
+        elsif user.role == "office"
            redirect_to(office_page_url)
-        elsif user.patient?
+        elsif user.role == "patient"
           redirect_to(patient_page_url)
         else
           redirect_to(root_url)

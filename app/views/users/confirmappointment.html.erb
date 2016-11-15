@@ -1,9 +1,99 @@
 <% provide(:title, "Created Appointment") %>
 <html>
-    
+
 <h1>Confirm Appointment</h1>
+<style type="text/css">
+    .box{
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+        border: 1px solid #000;
+    }
+    .one{ background: #ffffff; }
+    .two{ background: #ffffff; }
+    .three{ background: #ffffff; }
+</style>
+<script type="text/javascript">
+
+    function sample1() {
+    document.getElementById('hello').innerHTML = empDesignation();
+     
+    }
 
 
+
+    function empDesignation(){
+    var a = sessionStorage.getItem("sent")
+    var val = a
+    
+    alert(a)
+        if(a == 1){
+            $(".one").show();
+        }
+        if(a == 2){
+            $(".two").show();
+        }
+    
+    var output = a
+    var count = 0;
     
     
-</html>    
+    return output
+
+    }
+
+    </script>
+
+
+
+
+</script>
+
+
+   <body onload="javascript:sample1()">
+
+       <div id="hello"></div>
+       
+       
+      <div class="one box"><h1> Your confirmed appointment </h1> 
+      <% Appointment.all.each do |u|  %>
+              <% if (u.id == 1) %>
+                 <h3><label>ID:  <%= u.id %> </h3></label>
+                  <h3><label>Date: <%= u.date %> </h3></label>
+                  <h3><label>First Name: <%= u.firstname %> </h3></label>
+                  <h3><label>Last Name: <%= u.lastname %></h3></label>
+                  <h3><label>Specialty: <%= u.specialty %></h3></label>
+                  <h3><label>Status:<%= u.status = "Pending" %></h3></label>
+                  <h3><label style="visibility: hidden;">:<%= u.save %></h3></label>
+              <% end %>
+              
+      <% end %>
+    You have selected <strong>green option</strong> so i am here</div>    
+        
+        <div class="two box"><h1> Your confirmed appointment </h1>
+        <% Appointment.all.each do |u|  %>
+              <% if (u.id == 2) %>
+                 <h3><label>ID:  <%= u.id %> </h3></label>
+                  <h3><label>Date: <%= u.date %> </h3></label>
+                  <h3><label>First Name: <%= u.firstname %> </h3></label>
+                  <h3><label>Last Name: <%= u.lastname %></h3></label>
+                  <h3><label>Specialty: <%= u.specialty %></h3></label>
+                  <h3><label>Status:<%= u.status = "Pending" %></h3></label>
+                  <h3><label style="visibility: hidden;">:<%= u.save %></h3></label>
+              <% end %>
+              
+      <% end %>
+        
+    </div>
+    <div class="C box"><h1> Hello World </h1>You have selected <strong>blue option</strong> so i am here</div>
+
+
+
+
+
+   </body>
+
+
+
+
+</html>

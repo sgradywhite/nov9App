@@ -10,38 +10,35 @@
         margin-top: 20px;
         border: 1px solid #000;
     }
-    .Allergy{ background: #ff0000; }
-    .BackProblems{ background: #00ff00; }
-    .C{ background: #0000ff; }
+    .Allergy{ background: #ffffff; }
+    .BackProblems{ background: #ffffff; }
+    .C{ background: #ffffff; }
 </style>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
         $(document).ready(function(){
-            $('#role').on('change', function(){
-            var s = document.getElementById('role');
-            var role = s.options[s.selectedIndex].value;
+            $('#specialty').on('change', function(){
+            var s = document.getElementById('specialty');
+            var specialty = s.options[s.selectedIndex].value;
             
-            var specialty = s.options[s.selectedIndex].text
+            var textvalz = s.options[s.selectedIndex].text
             var count = 0;
-            while (count < 100) {
-                if (role == count) {
+            
                     
-                if(specialty == "BackProblems"){
+                if(textvalz == "BackProblems"){
                 $(".box").not(".BackProblems").hide();
                 $(".BackProblems").show();
                 }
                 
-                else if(specialty == "Allergy"){
+                else if(textvalz == "Allergy"){
                 $(".box").not(".Allergy").hide();
                 $(".Allergy").show();
                 }
                 
                 
                 
-            }
-                count++;
-            }
+            
             
             });
         });
@@ -49,13 +46,19 @@
       
        
     <script type="text/javascript">
-    function submitappoint() {
-    window.open('confirmappointment.html', "_self")
+    function submitappoint(abc) {
+     
+    sessionStorage.setItem("sent", abc.id );
     
+    
+    window.open('confirmappointment.html',  "_self")
     var spec = prompt("Thank you for selecting your appointment", "yes")
     
     }
+    
+    
     </script>
+    
 
 
 </head>
@@ -64,57 +67,56 @@
         
     </div>
     <div>
+      
         <option>Search for Specialty:</option>
         
-        <%= select_tag(:role, options_for_select(@user_options), { include_blank: true })  %>
+        <%= select_tag(:specialty, options_for_select(@user_options), { include_blank: true })  %>
     </div>
     
-    <div id="results"> </div>
+   
     
-    <div class="Allergy box"><h1> Doctor Appointment </h1>
+    <div class="Allergy box"><h1> Doctor Appointment for Allergy</h1>
     
   
-</form>
+
          
                     <div class = "appointmentbackground" >     
                     
                     <% @allergys.each do |appointment| %>
-                         
-                            <button onclick="submitappoint()" class = "buttonappointment" id="t" >       
-                            <option><label>Date: </label><%= appointment.date %> <%= appointment.firstname %>
+                            <% if appointment.status != "Pending" %> 
+                            <button onclick="submitappoint(this)" class = "buttonappointment" id= <%= appointment.id %> >       
+                            <option><label name = "id">ID: <%= appointment.id %></label> <label>Date:  <%= appointment.date %></label><label > <%= appointment.firstname %></label>
                             <%= appointment.lastname %> <%= appointment.specialty %></option ></button > 
-                        
+                            <% end %>
+                            
                     <% end %>
+                  
                     
                     </div>
-                    <input type="Button" value = "Submit" </input>
+                    
                    
                     <p id="demo"></p>
         
-        You have selected<strong>red option</strong> so i am here</div>
+        </div>
         
         
-    <div class="BackProblems box"><h1> Doctor Appointment </h1>
-        <table border="1px">
-                <thead>
-                    <th>Date</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Specialty</th>
-                    
-                </thead>
-                <tbody>
+    <div class="BackProblems box"><h1> Doctor Appointment for BackProblems </h1>
+        
+                
+                    <div class = "appointmentbackground" >  
                     
                     <% @backproblems.each do |appointment| %>
-                        <tr>
-                            <td> <%= appointment.date %></td>
-                            <td> <%= appointment.firstname %></td>
-                            <td> <%= appointment.lastname %></td>
-                            <td> <%= appointment.specialty %> </td>
-                        </tr>
+                        <% if appointment.status != "Pending" %> 
+                            <button onclick="submitappoint(this)" class = "buttonappointment" id= <%= appointment.id %> >       
+                            <option><label name = "id">ID: <%= appointment.id %></label> <label>Date:  <%= appointment.date %></label><label > <%= appointment.firstname %></label>
+                            <%= appointment.lastname %> <%= appointment.specialty %></option ></button > 
+                            <% end %>
                     <% end %>
-                </tbody>
-            </table>You have selected <strong>green option</strong> so i am here</div>
+                    
+                     </div>
+                
+    </div>
     <div class="C box"><h1> Hello World </h1>You have selected <strong>blue option</strong> so i am here</div>
+    
 </body>
 </html>
