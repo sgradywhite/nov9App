@@ -1,3 +1,0 @@
-class Find < ApplicationRecord
-    
-end
