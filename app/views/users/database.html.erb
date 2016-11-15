@@ -1,0 +1,72 @@
+<% provide(:title, "Database") %>
+<html>
+    
+   
+    <body>
+        <h1 style = "margin-top: 0px;">This is a Database Page for Admin</h1>
+        
+        <div  class = "databaseframe"> 
+           
+            <table border="1px">
+                <thead>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Created At</th>
+                    <th>Updated At</th>
+                    <th>Password Digest</th>
+                    <th>Remember Digest</th>
+                    <th>Admin</th>
+                    <th>Activation Digest</th>
+                    <th>Activated</th>
+                    <th>Activated At</th>
+                    <th>Reset Digest</th>
+                    <th>Reset Sent At</th>
+                    <th>Doctor</th>
+                    <th>Office</th>
+                    <th>Patient</th>
+                    <th>Role</th>
+                    <th>Specialty</th>
+                    
+                </thead>
+                <tbody>
+                    <% @users.each do |user| %>
+                        <tr>
+                            <td> <%= user.firstname %></td>
+                            <td> <%= user.lastname %></td>
+                            <td> <%= user.email %> </td>
+                            <td> <%= user.created_at %> </td>
+                            <td> <%= user.updated_at %> </td>
+                            <td> <%= user.password_digest %> </td>
+                            <td> <%= user.remember_digest %> </td>
+                            <td> <%= user.admin %> </td>
+                            <td> <%= user.activation_digest %> </td>
+                            <td> <%= user.activated %> </td>
+                            <td> <%= user.activated_at %> </td>
+                            <td> <%= user.reset_digest %> </td>
+                            <td> <%= user.reset_sent_at %> </td>
+                            <td> <%= user.doctor %> </td>
+                            <td> <%= user.office %> </td>
+                            <td> <%= user.patient %> </td>
+                            <td> <%= user.role %> </td>
+                            <td> <%= user.specialty %> </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+
+            </table>
+           
+        </div>
+        
+        </div>
+        <div class = "btnDeleteUser" >
+        <%= link_to "Delete User!", userdatabase_path, class: "btn btn-lg btn-primary" %>
+        </div>
+        <div class = "btnSaveUser">
+        <%= link_to "Save!", userdatabase_path, class: "btn btn-lg btn-primary"  %>
+       </div>
+    </body>
+    
+    
+    
+</html>

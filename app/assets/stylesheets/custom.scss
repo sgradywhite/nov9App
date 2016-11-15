@@ -1,0 +1,804 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+.navbar-inverse {
+  background-color: #1a75ff;
+  border-color: #005ce6;
+
+}
+
+.navbar-inverse
+.navbar-nav > li > a {
+  color: #ffffff;
+}
+.alert.alert-info{
+
+  font-size: 20px;
+  font-family: Times New Roman;
+}
+
+.alert-info {
+  background-color: #9E9E9E;
+  border-color: #9E9E9E;
+  color: #0d0808;
+}
+
+.alert{
+  padding: 15px;
+  margin-top: 60px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: right;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-top: 120px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #000000;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  padding-left: 75px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid none;
+  color: $gray-light;
+  a {
+    color: $gray;
+    &:hover {
+      color: $gray-darker;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+
+
+
+
+.background{
+	position: absolute;
+	left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+	margin: 0px auto;
+	border: 2px solid #1a75ff;
+
+	}
+
+.btn{
+	margin-top: 5px;
+
+}
+.btnSignUp{
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 50px;
+  border: 1px solid none;
+}
+.btnSearch{
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 50px;
+  margin-top: 400px;
+  margin-bottom: 10px;
+  border: 1px solid none;
+}
+.btnDeleteUser{
+  display: block;
+  margin: 0 auto;
+  width: 132px;
+  height: 50px;
+  border: 1px solid none;
+}
+.btnSaveUser{
+  display: block;
+  margin: 0 auto;
+  width: 132px;
+  height: 50px;
+  border: 1px solid none;
+}
+.picsize{
+	position: absolute;
+  display: block;
+	top: 340px;
+	width: 1102px;
+	height: 352px;
+	margin: 0 auto;
+	border: 1px solid black;
+	}
+.footer{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 40px;
+	background-color: none;
+	border: 2px solid none;
+
+}
+.label{
+
+}
+.titletab{
+	position: relative;
+	width: 1000px;
+	height: 60px;
+
+	top: 49px;
+	border: 2px solid black;
+	background-color: white;
+}
+.tab1{
+	position: absolute;
+	text-align: center;
+	top: 0px;
+	width: 195px;
+	left: 0px;
+  bottom: 0px;
+	background-color: empty;
+	border-right: 2px solid black;
+
+}
+.tab2{
+	position: absolute;
+	text-align: center;
+	width: 195px;
+
+	top: 0px;
+  bottom: 0px;
+	left: 200px;
+	background-color: empty;
+	border-right: 2px solid black;
+}
+.tab3{
+  position: absolute;
+	text-align: center;
+	width: 195px;
+
+	left: 400px;
+  top: 0px;
+  bottom: 0px;
+	background-color: empty;
+	border-right: 2px solid black;
+}
+.tab4{
+  position: absolute;
+	text-align: center;
+	width: 195px;
+
+	left: 595px;
+  top: 0px;
+  bottom: 0px;
+
+  color: #000000;
+	background-color: empty;
+	border-right: 2px solid black;
+}
+.tab5{
+position: absolute;
+	text-align: center;
+	top: 0px;
+	width: 195px;
+
+	left: 795px;
+	background-color: empty;
+	border: 2px solid empty;
+}
+.userbackground{
+	position: absolute;
+	left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+	margin: 0px auto;
+	border: 2px solid #1a75ff;
+
+	}
+.usertitletab{
+	position: relative;
+	width: 600px;
+	height: 60px;
+
+	top: 49px;
+	
+	border: 2px solid black;
+	background-color: white;
+}
+.usertab1{
+	position: absolute;
+	text-align: center;
+	top: 0px;
+	width: 195px;
+	left: 0px;
+  bottom: 0px;
+	background-color: empty;
+	border-right: 2px solid black;
+
+}
+.usertab2{
+	position: absolute;
+	text-align: center;
+	width: 195px;
+
+	top: 0px;
+  bottom: 0px;
+	left: 200px;
+	background-color: empty;
+	border-right: 2px solid black;
+}
+.usertab3{
+  position: absolute;
+	text-align: center;
+	width: 195px;
+
+	left: 400px;
+  top: 0px;
+  bottom: 0px;
+	background-color: empty;
+	border: 2px solid none;
+}
+.officebackground{
+	position: absolute;
+	left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+	margin: 0px auto;
+	border: 2px solid #1a75ff;
+
+	}
+
+.officetitletab{
+	position: relative;
+	width: 600px;
+	height: 60px;
+
+	top: 49px;
+	
+	border: 2px solid black;
+	background-color: white;
+}
+.officetab1{
+	position: absolute;
+	text-align: center;
+	top: 0px;
+	width: 195px;
+	left: 0px;
+  bottom: 0px;
+	background-color: empty;
+	border-right: 2px solid black;
+
+}
+.officetab2{
+	position: absolute;
+	text-align: center;
+	width: 195px;
+
+	top: 0px;
+  bottom: 0px;
+	left: 200px;
+	background-color: empty;
+	border-right: 2px solid black;
+}
+.officetab3{
+  position: absolute;
+	text-align: center;
+	width: 195px;
+
+	left: 400px;
+  top: 0px;
+  bottom: 0px;
+	background-color: empty;
+	border: 2px solid none;
+}
+
+h7, h8, h9, h10, h11 {
+
+  line-height: 3.5;
+  font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 900px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    line-height: 1;
+    left: -50px;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.multi-column-dropdown{
+		list-style: none;
+}
+
+.frame1{
+	position: absolute;
+	left:488.5px;
+	width: 300px;
+	height: 50px;
+	top: 49;
+	text-align: center;
+	border: 2px solid black;
+
+}
+h12{
+
+
+	line-height: 1;
+	font-size: 3em;
+
+
+}
+.btn btn-lg btn-primary{
+			font-size: 3em;
+			background-color: white;
+			margin-top: 0px;
+}
+
+
+
+
+.onecategoryframe{
+    position: relative;
+	left: -65px;
+	width:1270px;
+	top: -10px;
+	height: 1000px;
+	bottom: 0px;
+	border: 2px solid black;
+}
+
+.doctorinformation1{
+	position: absolute;
+	left: 5px;
+	width: 1253px;
+	right: 5px;
+	top: 75px;
+	height: 200px;
+	border: 2px solid black;
+
+
+}
+.doctorpicture1{
+	position: absolute;
+	left: 10px;
+	top: 20px;
+	width: 150px;
+	height: 150px;
+	border: 2px solid gray;
+}
+.doctorname1{
+	position: absolute;
+	left: 180px;
+	height: 30px;
+	top: 20px;
+	font-size: 2em;
+	line-height: 1;
+	border: 2px solid gray;
+}
+.doctorphone1{
+	position: absolute;
+	left: 180px;
+	top: 55px;
+	height: 90px;
+	font-size: 2em;
+	line-height: 1;
+	border: 2px solid gray;
+}
+.doctorlocation1{
+     position: absolute;
+     left: 410px;
+     top: 55px;
+     height: 90px;
+     font-size: 2em;
+     line-height: 1;
+     border: 2px solid gray;
+     }
+
+.doctorinformation2{
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	width: 1253px;
+	top: 300px;
+	height: 200px;
+	border: 2px solid black;
+
+
+}
+.doctorpicture2{
+	position: absolute;
+	left: 10px;
+	top: 20px;
+	width: 150px;
+	height: 150px;
+	border: 2px solid gray;
+}
+.doctorname2{
+	position: absolute;
+	left: 180px;
+	height: 30px;
+	top: 20px;
+	font-size: 2em;
+	line-height: 1;
+	border: 2px solid gray;
+}
+.doctorphone2{
+	position: absolute;
+	left: 180px;
+	top: 55px;
+	height: 90px;
+	font-size: 2em;
+	line-height: 1;
+	border: 2px solid gray;
+}
+.doctorlocation2{
+     position: absolute;
+     left: 410px;
+     top: 55px;
+     height: 90px;
+     font-size: 2em;
+     line-height: 1;
+     border: 2px solid gray;
+     }
+
+.doctorinformation3{
+	position: absolute;
+	left: 5px;
+	right: 5px;
+	width: 1253px;
+	top: 525px;
+	height: 200px;
+	border: 2px solid black;
+
+
+}
+.doctorpicture3{
+	position: absolute;
+	left: 10px;
+	top: 20px;
+	width: 150px;
+	height: 150px;
+	border: 2px solid gray;
+}
+.doctorname3{
+	position: absolute;
+	left: 180px;
+	height: 30px;
+	top: 20px;
+	font-size: 2em;
+	line-height: 1;
+	border: 2px solid gray;
+}
+.doctorphone3{
+	position: absolute;
+	left: 180px;
+	top: 55px;
+	height: 90px;
+	font-size: 2em;
+	line-height: 1;
+	border: 2px solid gray;
+}
+.doctorlocation3{
+     position: absolute;
+     left: 410px;
+     top: 55px;
+     height: 90px;
+     font-size: 2em;
+     line-height: 1;
+     border: 2px solid gray;
+     }
+.doctordetails1
+{
+  position: absolute;
+  left: 500px;
+  bottom: -50px;
+  height: 20px;
+  font-size: .54em;
+  line-height: 1;
+  width: 88px;
+  color: blue;
+  border: 1px solid gray;
+}
+
+
+.dropdown2 {
+    position: absolute;
+    display: inline-block;
+}
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 1265px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    line-height: 1;
+    height: 750px;
+    left: -420px;
+    border: 1px solid black;
+}
+.dropdown2:hover .dropdown-content2 {
+    display: block;
+}
+h13{
+  line-height: 1;
+	font-size: 1em;
+}
+
+.doctordetailscontainer{
+   position: absolute;
+   left: 100px;
+   right: 100px;
+   top: 100px;
+   font-size: 1em;
+   background-color: LightGray;
+   border: 1px solid none;
+}
+
+h100{
+  line-height: 2.2;
+  font-size: 1.5em;
+  color: white;
+}
+
+	.invisibleblock{
+	  display: block;
+	  margin: 0px auto;
+	  height: 100px;
+	  left: 0;
+	  right: 0;
+	  border: 2px solid none;
+	}
+	
+	.appointmentframe{
+	  display: block;
+	  margin: 0px auto;
+	  height: 500px;
+	  left: 20px;
+	  right: 20px;
+	  border: 2px solid black;
+	}
+	
+	.appointmentheader{
+	  position: absolute;
+	  height: 100px;
+	  margin-top: 40px;
+	  margin-left: 40px;
+	  margin-right: 40px;
+	  width: 200px;
+	  border: 2px solid none;
+	}
+
+.databaseframe{
+	 position: relative;
+	 left:  0px;
+	 width: 2000px;
+	 border: 2px solid black;
+	}
+	
+	.databaseheader{
+	  position: absolute;
+	  top: 0px;
+	  left: 10px;
+	  right: 10px;
+	  border-left: 2px solid black;
+	  border-right: 2px solid black;
+	  border-bottom: 2px solid black;
+	}
+.searchresultframe{
+	 position: relative;
+	 margin-left:  5px;
+	 margin-right: 5px;
+	 border: 2px solid black;
+	}	
+.appointmentbackground{
+	position: relative;
+	height: 200px;
+	width: 1100px;
+	background: white;
+	overflow: scroll;
+	border: 2px solid black;
+}
+.buttonappointment{
+	
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 500px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

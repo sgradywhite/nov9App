@@ -1,0 +1,18 @@
+default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/development.sqlite3
+
+test:
+  adapter: postgres
+  database: my_database_test
+
+production:
+  adapter: postgres
+  database: my_database_production
+  username:
+  password:
