@@ -1,0 +1,47 @@
+<% provide(:title, "Result") %>
+<html>
+    
+   
+    <body>
+        <h1 style = "margin-top: 0px;">This is a Search Result for Patient</h1>
+        @results
+        <div  class = "searchresultframe">
+            
+        
+       
+           
+            <table border="1px">
+                <thead>
+                    <th>Date</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Role</th>
+                    
+                </thead>
+                <tbody>
+                    
+                    <% @appointments.each do |appointment| %>
+                        <tr>
+                            <td> <%= appointment.date %></td>
+                            <td> <%= appointment.firstname %></td>
+                            <td> <%= appointment.lastname %></td>
+                            <td> <%= appointment.role %> </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+           
+        </div>
+        
+        </div>
+        <div class = "btnDeleteUser" >
+        <%= link_to "Delete User!", userappointment_path, class: "btn btn-lg btn-primary" %>
+        </div>
+        <div class = "btnSaveUser">
+        <%= link_to "Save!", userappointment_path, class: "btn btn-lg btn-primary"  %>
+       </div>
+    </body>
+    
+    
+    
+</html>

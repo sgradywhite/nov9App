@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Show Hide Using Select Box</title>
+<style type="text/css">
+    .box{
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+        border: 1px solid #000;
+    }
+    .doctor{ background: #ff0000; }
+    .B{ background: #00ff00; }
+    .C{ background: #0000ff; }
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('#role').on('change', function(){
+            var s = document.getElementById('role');
+            var role = s.options[s.selectedIndex].value;
+            
+            var specialty = s.options[s.selectedIndex].text
+            var count = 0;
+            while (count < 100) {
+                if (role == count) {
+                    
+                $(".box").not(".doctor").hide();
+                $(".doctor").show();
+                
+                
+                
+                
+            }
+                count++;
+            }
+            
+            });
+        });
+      </script>
+</head>
+<body>
+    <div>
+        
+    </div>
+    <div>
+        <option>Search for Specialty:</option>
+        <%= select_tag(:role, options_for_select(@user_options), { include_blank: true })  %>
+    </div>
+    
+    <div id="results"> </div>
+    
+    <div class="doctor box"><h1> Doctor Appointment </h1>
+        <table border="1px">
+                <thead>
+                    <th>Date</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Role</th>
+                    
+                </thead>
+                <tbody>
+                    
+                    <% @appointments.each do |appointment| %>
+                        <tr>
+                            <td> <%= appointment.date %></td>
+                            <td> <%= appointment.firstname %></td>
+                            <td> <%= appointment.lastname %></td>
+                            <td> <%= appointment.role %> </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        
+        You have selected<strong>red option</strong> so i am here</div>
+        
+        
+    <div class="B box">You have selected <strong>green option</strong> so i am here</div>
+    <div class="C box"><h1> Hello World </h1>You have selected <strong>blue option</strong> so i am here</div>
+</body>
+</html>

@@ -1,0 +1,374 @@
+
+<html>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<body>
+<div class ="background">
+
+
+   <div class ="titletab", style= "margin: 0 auto;">
+	   <div class = "tab1">
+	   	<div class="dropdown">
+			<label for="username"><h7>Find A Doctor</h7></label>
+		<div class= "dropdown-content">
+			<p>   View All Physicians
+			</p>
+
+			<div class ="row">
+			   <div class = "col-sm-3">
+				   <ul class = "multi-column-dropdown">
+					 <p>
+					 <li><%= link_to "Allergy Immunology", allergyimmunology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Anatomic Pathology", anatomicpathology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Anatomic-Clinical Pathology", anatomicclinicalpathology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Anesthesiology", anesthesiology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Bariatric Surgery", bariatricsurgery_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Breast Surgery", breastsurgery_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Cardiac Surgery", cardiacsurgery_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Cardiovascular Disease", cardiovasculardisease_path, class: "" %></li>
+					  </p>
+					   <p>
+					 <li><%= link_to "Child & Adolescent Psychiatry", childadolescentpsychiatry_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Child Neurology", childneurology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Clinical Cardiac Electrophysiology", clinicalcardiacelectrophysiology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Clinical Pathology", clinicalpathology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Colon Rectal Surgery", colonrectalsurgery_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Critical Care Medicine", criticalcaremedicine_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Dentistry", dentistry_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Dermatology", dermatology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Diagnostic Radiology", diagnosticradiology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Emergency Medical Services", emergencymedicalservices_path, class: "" %></li>
+					  </p>
+					   <p>
+					 <li><%= link_to "Endocrinology", endocrinology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Facial Plastic Reconstr Surgery", facialplasticreconstrsurgery_path, class: "" %></li>
+					  </p>
+					   <p>
+					  <li><%= link_to "Family Medicine", familymedicine_path, class: "" %></li>
+					  </p>
+
+				   </ul>
+			   </div>
+			   <div class = "col-sm-3">
+				   <ul class = "multi-column-dropdown">
+					<p>
+					 <li><%= link_to "Gastroenterology", gastroenterology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "General Surgery", generalsurgery_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Geriatric Medicine", geriatricmedicine_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Gynecologic Oncology", gynecologiconcology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Gynecology", gynecology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Hand Surgery", handsurgery_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Head Neck Surgery", headnecksurgery_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Hematology", hematology_path, class: "" %></li>
+					  </p>
+					   <p>
+					 <li><%= link_to "Hospice and Palliative Medicine", hospiceandpalliativemedicine_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Hyperbaric Medicine", hyperbaricmedicine_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Infectious Disease", infectiousdisease_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Integrative Medicine", integrativemedicine_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Internal Medicine", internalmedicine_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Interventional Cardiology", interventionalcardiology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Maternal Fetal Medicine", maternalfetalmedicine_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Medical Oncology", medicaloncology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Neonatal-Perinatal Medicine", neonatalperinatalmedicine_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Nephrology", nephrology_path, class: "" %></li>
+					  </p>
+					   <p>
+					 <li><%= link_to "Neurological Surgery", neurologicalsurgery_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Neurology", neurology_path, class: "" %></li>
+					  </p>
+					   <p>
+					  <li><%= link_to "Neuro Radiology", neuroradiology_path, class: "" %></li>
+					  </p>
+					</ul>
+			   </div>
+			   <div class = "col-sm-3">
+				   <ul class = "multi-column-dropdown">
+					<p>
+					 <li><%= link_to "Nuclear Medicine", nuclearmedicine_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Obstetrics", obstetrics_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Occupational Medicine", occupationalmedicine_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Ophthalmology", ophthalmology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Oral Maxillofacial Surgery", oralmaxillofacialsurgery_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Orthopaedic Surgery", orthopaedicsurgery_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Otolaryngology", otolaryngology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Pain MedicinePain Management", painmedicinepainmanagement_path, class: "" %></li>
+					  </p>
+					   <p>
+					 <li><%= link_to "Pathology", pathology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Pediatric Allergy Immunology", pediatricallergyimmunology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to  "Pediatric Cardiology", pediatriccardiology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Pediatric dentistry", pediatricdentistry_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Pediatric Dermatology", pediatricdermatology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Pediatric Endocrinology", pediatricendocrinology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Pediatric Infectious Disease", pediatricinfectiousdisease_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Pediatric Ophthalmology", pediatricophthalmology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Pediatric Pulmonology", pediatricpulmonology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Pediatric Radiology", pediatricradiology_path, class: "" %></li>
+					  </p>
+					   <p>
+					 <li><%= link_to "Pediatric Surgery", pediatricsurgery_path, class: ""  %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Pediatric Urology", pediatricUrology_path, class: ""  %></li>
+					  </p>
+					   <p>
+					  <li><%= link_to "Pediatrics", pediatrics_path, class: ""  %></li>
+					  </p>
+					</ul>
+			   </div>
+			   <div class = "col-sm-3">
+				   <ul class = "multi-column-dropdown">
+					 <p>
+					 <li><%= link_to "Physical Medicine Rehabilitation", physicalmedicinerehabilitation_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Plastic Reconstructive Surgery", plasticreconstructivesurgery_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Podiatry", podiatry_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Psychiatry", psychiatry_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Pulmonary Disease Medicine", pulmonarydiseasemedicine_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Radiation Oncology", radiationoncology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Radiology", radiology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Radiology NeuroInterventional", radiologyneurointerventional_path, class: "" %></li>
+					  </p>
+					   <p>
+					 <li><%= link_to "Radiology VascularInterventional", radiologyvascularinterventional_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Reproductive Endocrinology", reproductiveendocrinology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Retina Specialist", retinaspecialist_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Rheumatology", rheumatology_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Sleep Medicine", sleepmedicine_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Spine Surgery", spinesurgery_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Sports Medicine", sportsmedicine_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Surgical Critical Care", surgicalcriticalcare_path, class: "" %></li>
+					  </p>
+					  <p>
+					 <li><%= link_to "Surgical Oncology", surgicaloncology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Thoracic Surgery", thoracicsurgery_path, class: "" %></li>
+					  </p>
+					   <p>
+					 <li><%= link_to "Transplant Hepatology", transplanthepatology_path, class: "" %></li>
+					 </p>
+					 <p>
+					  <li><%= link_to "Urology", urology_path, class: "" %></li>
+					  </p>
+					   <p>
+					  <li><%= link_to "Vascular Surgery", vascularsurgery_path, class: "" %></li>
+					  </p>
+				   </ul>
+			   </div>
+			 </div>
+
+
+
+
+     </div>
+ 		</div>
+
+ 	   </div>
+ 	   <div class = "tab2">
+ 	   	<div class="dropdown">
+ 			<label for="username"><h7>Information</h7></label>
+ 		<div class= "dropdown-content">
+ 	   <p>Health Wellness</p>
+ 	   </div>
+ 	   </div>
+ 	   </div>
+ 	   <div class = "tab3">
+ 	   	<div class="dropdown">
+ 			<label for="username"><h7>Patient & Visitors</h7></label>
+ 		<div class= "dropdown-content">
+ 	   <p>Schedule & Policy</p>
+ 	   </div>
+ 	   </div>
+ 	   </div>
+ 	   <div class = "tab4">
+
+ 	   <a class href = "/aboutus" style="color: #000000;"><h7>About Us</h7></a>
+
+ 	   </div>
+ 	   <div class = "tab5">
+ 	   <h11>Contact</h11>
+ 	   </div>
+    </div>
+    <div>
+    <div>
+    <div>
+     <h1>Welcome to the Bridgeport Medical Center</h1>
+
+     <h2>
+       This is the home page for the
+       <a href="http://localhost:3000/" style="color: #000000;">Bridgeport Medical Center</a>
+       website.
+     </h2>
+
+
+
+
+
+
+
+
+<p>
+   <%= link_to image_tag("BridgeportMedicalCenter.png", alt: "Bridgeport Medical Center", width: "1100px", height: "350px", style: "display: block;  margin: 0 auto;") %>
+</p>
+<div class = "btnSignUp" >
+<%= link_to "Sign up!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+  </div>
+
+ </div>
+ </div>
+ </div>
+
+
+
+</body>
+</html>

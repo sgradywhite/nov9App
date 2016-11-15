@@ -1,0 +1,11 @@
+ #  function typemodel(sel)
+    #var value = sel.value;
+    #if sel.value = 'Admin'
+     #   @user.admin = true
+    #elsif sel.value = 'Doctor'
+        #@user.doctor = true
+    #elsif sel.value = 'Office'
+        #@user.office = true
+    #elsif sel.value = 'Patient'
+     #   @user.patient = true
+    #end
